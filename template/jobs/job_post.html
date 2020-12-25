@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>4536+ Jobs Available</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    <div class="job_details_area">
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8">
+                    <div class="apply_job_form white-bg">
+                        <h4>Post Job</h4>
+                        <form action="{% url 'job_post' %}" method="post">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input_field">
+
+                                        <input type="text" name="name" required disabled value="{{ user.username }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="title" class="form-control" placeholder="Job Title">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="position" placeholder="Position">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="nature" placeholder="Job Nature">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="number" name="salary" placeholder="Job Salary">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="job_type"
+                                               placeholder="Job Type(Example Graphics,Developer )">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="location" placeholder="Job Location">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="category" placeholder="Job Category">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <input type="text" name="experience" placeholder="Experience Nedded">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="qualification" id="" cols="40" rows="100"
+                                                  placeholder="Qualification"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="text" name="gender" placeholder="Gender">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input type="number" name="vacency" placeholder="Job Vacency">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="responsibilities" id="" cols="40" rows="100"
+                                                  placeholder="Job Responsibilities"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="benefit" id="" cols="40" rows="100"
+                                                  placeholder="Job Benefit"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <input type="datetime-local" name="expired_date" placeholder="Expiry Date">
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <div class="input_field">
+                                        <input type="datetime-local" name="published_date" placeholder="Published Date">
+                                    </div>
+                                </div>
+                                   <div class="col-md-12">
+                                    <div class="input_field">
+                                        <input type="file" name="logo" class="fas fa-image" placeholder="Company Logo">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

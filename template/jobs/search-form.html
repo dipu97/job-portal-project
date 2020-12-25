@@ -1,0 +1,51 @@
+<form action="{% url 'search' %}" method="">
+    <!-- Form Row 1 -->
+    <div class="search_widget">
+        <div class="row cat_search">
+            <div class="col-lg-3 col-md-4">
+                <div class="single_input">
+                    <input type="text" name="Keyword" class="form-control" placeholder="Keyword"
+                           value="{{ get_method.Keyword }}">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="single_input">
+                    <select class="wide" name="Location">
+
+                        <option data-display="Location">Location</option>
+                        {% for key,value in Location.items %}
+
+                            <option value="{{ key }}"
+                                {% if key == get_method.Location %}
+                                    selected
+                                {% endif %}
+                                >{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="single_input">
+                    <select class="wide" name="Category">
+                        <option data-display="Category">Category</option>
+                        {% for key,value in Category.items %}
+
+                            <option value="{{ key }}"
+                            {% if key == get_method.Category %}
+                            selected
+                            {% endif %}
+                            >{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="job_btn">
+                <button class="boxed-btn3" type="submit">Find Job !!</button>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}My Dashboard{% endblock %}
+
+{% block content %}
+
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{ count }}+ Jobs Available</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/_alerts.html' %}
+    <!--/ bradcam_area  -->
+    <section id="showcase-inner" class="py-5 text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="display-4">{{ user.username }} Dashboard</h1>
+                    <p class="lead">Manage your account</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+
+    <section id="bc" class="mt-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'index' %}">
+                            <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active"> Dashboard</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section id="dashboard" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Welcome {{ user.username }}</h2>
+                    <p>Here are the job listing listings that you have inquired about</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Property</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if latest %}
+                            {% for jobs in latest %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ jobs.title }}</td>
+                                    <td>
+                                        <a class="btn btn-light" href="{% url 'job_index' jobs.id %}">View Listing</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+    <!-- bradcam_area  -->
+
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{ Candidate_index.name }} Details</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="job_details_header">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img src="{{ Candidate_index.photo.url }}" height="80" width="50" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="#"><h4>{{ Candidate_index.name }}</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p><i class="fas fa-mail-reply"></i>{{ Candidate_index.email }}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p><i class="fa fa-phone"></i> {{ Candidate_index.phone }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="descript_wrap white-bg">
+                        <div class="single_wrap">
+                            <h4>Employee Message</h4>
+                            <p>{{ Candidate_index.message }}</p>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3>About {{ Candidate_index.name }}</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+                                <li>Company: <span>{{ Candidate_index.company_name }}</span></li>
+                                <li>Date From: <span>{{Candidate_index.contact_date }} </span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="share_wrap d-flex">
+                        <span>Share at:</span>
+                        <ul>
+                            <li><a href="#"> <i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+{% endblock %}
