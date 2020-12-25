@@ -25,7 +25,7 @@ SECRET_KEY = 'h7+i^!b+f+rfeesv3v6%@t$c4efy+__ct&4m-_%m!!&pqegm5!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['job-portal-project1.herokuapp.com','127.0.0.1']
 
 
 # Application definition
